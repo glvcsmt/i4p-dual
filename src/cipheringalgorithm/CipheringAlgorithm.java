@@ -10,7 +10,7 @@ package cipheringalgorithm;
  * @author LENOVO
  */
 public class CipheringAlgorithm {
-
+ 
     /**
      * @param args the command line arguments
      */
