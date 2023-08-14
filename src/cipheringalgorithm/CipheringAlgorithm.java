@@ -1,21 +1,81 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package cipheringalgorithm;
+
+import static cipheringalgorithm.CipheringAlgorithm.values;
+import java.util.ArrayList;
 
 /**
  *
- * @author LENOVO
+ * @author glvcsmt
  */
 public class CipheringAlgorithm {
- 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+
+    //Karaktereket és kódjaikat tartalmazó ArrayList
+    public static ArrayList<Value> values = new ArrayList<>();
+
+    //A karaktereket és kójaikat tartalmazó ArrayList feltöltése
+    public static void Fill() {
+
+        char c;
+        int value = 0;
+
+        for (c = 'a'; c <= 'z'; ++c) {
+            Value v = new Value();
+            v.setC(c);
+            v.setValue(value);
+            values.add(v);
+            value++;
+        }
+
+        Value space = new Value(' ', 26);
+        values.add(space);
+
     }
-    
+
+    //Titkosítás
+    public static void Ciphering(String message, String clue) {
+
+        Fill();
+
+        char[] messageToChars = message.toCharArray();
+
+        clue = clue.substring(0, messageToChars.length);
+
+        char[] clueToChars = clue.toCharArray();
+
+        String secret = "";
+
+        for (int i = 0; i < messageToChars.length; i++) {
+            int sum = 0;
+            char mess = messageToChars[i];
+            char cl = clueToChars[i];
+
+            for (int j = 0; j < values.size(); j++) {
+                if (values.get(j).getC() == mess) {
+                    sum += values.get(j).getValue();
+                }
+                if (values.get(j).getC() == cl) {
+                    sum += values.get(j).getValue();
+                }
+            }
+
+            if (sum > 26) {
+                sum = sum % 27;
+            }
+
+            for (int j = 0; j < values.size(); j++) {
+                if (values.get(j).getValue() == sum) {
+                    secret += values.get(j).getC();
+                    break;
+                }
+            }
+        }
+
+        System.out.println(secret);
+
+    }
+
+    public static void main(String[] args) {
+
+    }
+
 }
