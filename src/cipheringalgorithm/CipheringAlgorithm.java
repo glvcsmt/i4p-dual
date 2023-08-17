@@ -14,6 +14,8 @@ public class CipheringAlgorithm {
 
     //A karaktereket és kójaikat tartalmazó ArrayList feltöltése
     public static void Fill() {
+        values.clear();
+        
         char c;
         int value = 0;
 
@@ -30,7 +32,7 @@ public class CipheringAlgorithm {
     }
 
     //Titkosítás
-    public static void Ciphering(String message, String clue) {
+    public static String Ciphering(String message, String clue) {
 
         Fill();
 
@@ -63,12 +65,12 @@ public class CipheringAlgorithm {
                 }
             }
         }
-
-        System.out.println(secret);
+        
+        return secret;
     }
 
     //Megfejtés
-    public static void Deciphering(String secret, String clue) {
+    public static String Deciphering(String secret, String clue) {
 
         Fill();
 
@@ -79,7 +81,6 @@ public class CipheringAlgorithm {
 
         for (int i = 0; i < secretToChars.length; i++) {
             int secInt = 0, clInt = 0;
-            char sec = secretToChars[i], cl = clueToChars[i];
 
             for (int j = 0; j < values.size(); j++) {
                 if (values.get(j).getC() == secretToChars[i]) {
@@ -102,11 +103,11 @@ public class CipheringAlgorithm {
             }
         }
         
-        System.out.println(message);
+        return message;
     }
 
     public static void main(String[] args) {
-        
+
     }
 
 }
