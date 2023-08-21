@@ -19,8 +19,8 @@ public class CipheringAlgorithmTest {
         int expectedLength = 27;
         int actualLength;
         
-        test.Fill();
-        actualLength = CipheringAlgorithm.values.size();
+        test.fill();
+        actualLength = test.values.size();
         
         assertEquals(expectedLength, actualLength);
     }
@@ -32,7 +32,7 @@ public class CipheringAlgorithmTest {
         String expected = "hfnosauzun";
         String actual;
         
-        actual = test.Ciphering("helloworld", "abcdefgijkl");
+        actual = test.ciphering("helloworld", "abcdefgijkl");
         
         assertEquals(expected, actual);
     }
@@ -44,7 +44,7 @@ public class CipheringAlgorithmTest {
         String expected = "helloworld";
         String actual;
         
-        actual = test.Deciphering("hfnosauzun", "abcdefgijkl");
+        actual = test.deciphering("hfnosauzun", "abcdefgijkl");
         
         assertEquals(expected, actual);
     }
