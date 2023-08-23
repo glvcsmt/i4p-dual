@@ -4,7 +4,7 @@ package cipheringalgorithm;
  *
  * @author glvcsmt
  */
-//Önálló osztály a karakterek és kódjaik egyszerűbb tárolásához, felhasználásához
+//Önálló osztály a karakterek és kódjaik egyszerűbb tárolásához, felhasználásához.
 public class Value {
 
     private char c;
