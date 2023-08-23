@@ -237,7 +237,7 @@ public class CipheringAlgorithm {
         return fullKey;
     }
 
-    //Metódus, ami a megfelelő függvények meghivásával visszafejti a kódolást:
+    //Metódus, ami a megfelelő függvények meghívásával visszafejti a kódolást:
     public String keyCracker(String codedMess1, String codedMess2) {
         String fullKey = "";;
         read();

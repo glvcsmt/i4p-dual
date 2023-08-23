@@ -66,8 +66,8 @@ public class CipheringAlgorithmTest {
     
     @Test
     public void testMakeAGuess(){
-        //Teszt: 'gscwfkiclckutdmwjgzhdpaz' és 'izczpsbseg oilk ofrwlr blez' 
-        //biztosan közös kódja 'ezmostakodamititkosdenag'. 
+        //Teszt: 'cvtlsxo fiutxzttqk yuyxq' és 'ebtobehpzmjnmgrxvjsmb wtmqm' 
+        //biztosan közös kódja 'abcdefghijklmopqrstuvwxy'. 
         //Ezt a metódust használja fel a keyCracker metódus is a kulcs visszafejtésére.
         CipheringAlgorithm test = new CipheringAlgorithm();
         String expected = "abcdefghijklmopqrstuvwxy";
@@ -80,9 +80,9 @@ public class CipheringAlgorithmTest {
 
     @Test
     public void testKeyCracker() {
-        //Teszt: A 'gscwfkiclckutdmwjgzhdpaz' és 'izczpsbseg oilk ofrwlr blez' 
-        //biztosan közös kódja 'ezmostakodamititkosdenag'. Ehhez meghivja a szükséges, 
-        //korábban már elkészitett metódusokat, megfelelően táplálja be az adatokat azokba.
+        //Teszt: A cvtlsxo fiutxzttqk yuyxq' és 'ebtobehpzmjnmgrxvjsmb wtmqm' 
+        //biztosan közös kódja 'abcdefghijklmopqrstuvwxy'. Ehhez meghívja a szükséges, 
+        //korábban már elkészített metódusokat, megfelelően táplálja be az adatokat azokba.
         
         //A metódus félkész, csak adott tesztesettel működik, 
         //amihez a lista is csak a megfejtendő karakterlánc szavait tartalmazza!
